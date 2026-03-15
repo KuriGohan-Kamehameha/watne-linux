@@ -1,0 +1,69 @@
+Date: 2026-03-15T17:47:03Z
+Host: Darwin 25.3.0
+
+=== Day 1 Task 2: systemd unit static analysis ===
+
+--- Chain Analysis ---
+Expected order:  modules -> permissions -> time-sync -> gps-lock -> preflight -> ardupilot
+
+  navio2-modules.service:
+    After=systemd-modules-load.service local-fs.target
+    Before=navio2-permissions.service
+    Type=oneshot, RemainAfterExit=yes
+    EnvironmentFile=-/etc/default/navio2-gates
+    ExecStart=/usr/local/lib/navio2-gates/navio2-modules.sh
+    VERDICT: OK (first gate, no predecessor dependency)
+
+  navio2-permissions.service:
+    After=navio2-modules.service
+    Requires=navio2-modules.service
+    Before=navio2-time-sync.service
+    Type=oneshot, RemainAfterExit=yes
+    EnvironmentFile=-/etc/default/navio2-gates
+    ExecStart=/usr/local/lib/navio2-gates/navio2-permissions.sh
+    VERDICT: OK (After+Requires on predecessor, Before on successor)
+
+  navio2-time-sync.service:
+    After=network-online.target systemd-timesyncd.service navio2-permissions.service
+    Wants=network-online.target
+    Requires=navio2-permissions.service
+    Before=navio2-gps-lock.service
+    Type=oneshot, RemainAfterExit=yes
+    EnvironmentFile=-/etc/default/navio2-gates
+    ExecStart=/usr/local/lib/navio2-gates/navio2-time-sync.sh
+    VERDICT: OK (After+Requires predecessor, Wants network, Before successor)
+
+  navio2-gps-lock.service:
+    After=navio2-time-sync.service
+    Requires=navio2-time-sync.service
+    Before=navio2-preflight.service
+    Type=oneshot, RemainAfterExit=yes
+    EnvironmentFile=-/etc/default/navio2-gates
+    ExecStart=/usr/local/lib/navio2-gates/navio2-gps-lock.sh
+    VERDICT: OK (After+Requires predecessor, Before successor)
+
+  navio2-preflight.service:
+    After=navio2-gps-lock.service
+    Requires=navio2-gps-lock.service
+    Before=ardupilot.service
+    Type=oneshot, RemainAfterExit=yes
+    EnvironmentFile=-/etc/default/navio2-gates
+    ExecStart=/usr/local/lib/navio2-gates/navio2-preflight.sh
+    VERDICT: OK (After+Requires predecessor, Before ardupilot)
+
+  ardupilot.service.override.example:
+    Requires=navio2-preflight.service
+    After=navio2-preflight.service
+    VERDICT: OK (correct final gate dependency)
+
+--- Structural Checks ---
+RemainAfterExit=yes:    PRESENT on all 5 oneshot units (required for Requires= to work)
+After+Requires pairs:   PRESENT on all units except first (modules has no predecessor - correct)
+EnvironmentFile=-:      Optional-file flag present on all units (falls back to script defaults)
+Before= ordering:       Each gate declares Before= for its successor (complete chain)
+WantedBy=:              multi-user.target on all 5 units (correct install target)
+
+--- Issues Found ---
+None.
+
+RESULT: PASS - no structural issues found

@@ -1,0 +1,46 @@
+Date: 2026-03-15T17:57:56Z
+Host: Darwin 25.3.0
+
+=== Day 3 Task 1: navio2-preflight.sh validation ===
+
+Preflight gate checks (3 sub-checks):
+  1. ADC channel readability (ch0-ch5): PASS in dry-run, FAIL in live (expected)
+  2. Preflight log write test: PASS in dry-run (skipped), FAIL in live (permission denied, expected)
+  3. Optional SPI node check: PASS (optional by default, PREFLIGHT_REQUIRE_SPI=0)
+
+All 4 truth-table scenarios match expected exit codes.
+No false passes or non-deterministic failures observed.
+
+=== Day 3 Task 2: systemd startup ordering ===
+
+Full chain verification (extracted from .service files):
+
+  [systemd-modules-load.service, local-fs.target]
+    |
+    v
+  navio2-modules.service  (After=systemd-modules-load.service local-fs.target)
+    |
+    v  (Requires+After)
+  navio2-permissions.service  (After=navio2-modules.service, Requires=navio2-modules.service)
+    |
+    v  (Requires+After)
+  navio2-time-sync.service  (After=network-online.target systemd-timesyncd.service navio2-permissions.service)
+    |                        (Wants=network-online.target, Requires=navio2-permissions.service)
+    v  (Requires+After)
+  navio2-gps-lock.service  (After=navio2-time-sync.service, Requires=navio2-time-sync.service)
+    |
+    v  (Requires+After)
+  navio2-preflight.service  (After=navio2-gps-lock.service, Requires=navio2-gps-lock.service)
+    |
+    v  (Requires+After via override)
+  ardupilot.service  (Requires=navio2-preflight.service, After=navio2-preflight.service)
+
+Ordering properties:
+  - Strict sequential: YES (each gate Requires+After its predecessor)
+  - Fail propagation: YES (Requires= means predecessor failure stops dependents)
+  - RemainAfterExit: YES on all oneshot units (required for Requires= chain)
+  - Before= declarations: Complete chain (each gate declares Before= for successor)
+  - No cycles detected
+  - No missing dependencies
+
+RESULT: PASS - deterministic startup sequence confirmed

@@ -1,0 +1,27 @@
+# ROS 2 package set for image integration
+#
+# Notes:
+# - Use ${ROS2_DISTRO} placeholder so the same manifest can be reused when
+#   ROS2_DISTRO changes in build/config/versions.env.
+# - Installer probes package availability in apt metadata and installs only
+#   compatible packages for the active rootfs/arch.
+
+# Core runtime
+ros-${ROS2_DISTRO}-ros-base
+
+# Messaging and transform stack used by robotics integrations
+ros-${ROS2_DISTRO}-geometry-msgs
+ros-${ROS2_DISTRO}-nav-msgs
+ros-${ROS2_DISTRO}-sensor-msgs
+ros-${ROS2_DISTRO}-tf2
+ros-${ROS2_DISTRO}-tf2-ros
+ros-${ROS2_DISTRO}-tf2-tools
+
+# Diagnostics and launch/runtime tooling
+ros-${ROS2_DISTRO}-diagnostic-updater
+ros-${ROS2_DISTRO}-launch
+ros-${ROS2_DISTRO}-launch-ros
+
+# Camera and image transport path (useful for RealSense ROS bridge workflows)
+ros-${ROS2_DISTRO}-cv-bridge
+ros-${ROS2_DISTRO}-image-transport

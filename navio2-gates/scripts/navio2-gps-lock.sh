@@ -51,6 +51,11 @@ main() {
 
     log "Starting GPS lock gate (DRY_RUN=$DRY_RUN path=$GPS_STATUS_PATH expected=$GPS_LOCK_VALUE timeout=${GPS_TIMEOUT_SEC}s)"
 
+    if [ ! -r "$GPS_STATUS_PATH" ] && [ "$DRY_RUN" = "1" ]; then
+        warn "GPS status path not readable in dry-run ($GPS_STATUS_PATH); continuing"
+        return 0
+    fi
+
     while [ "$elapsed" -lt "$GPS_TIMEOUT_SEC" ]; do
         if current_value="$(read_status_value)"; then
             if [ "$current_value" = "$GPS_LOCK_VALUE" ]; then

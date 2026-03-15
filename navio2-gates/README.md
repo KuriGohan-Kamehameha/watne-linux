@@ -11,7 +11,7 @@ This scaffold provides practical startup gates for Navio2 systems and a one-comm
 
 ## Gate Sequence
 
-1. `navio2-modules.sh`: loads required modules and verifies key Navio2 paths.
+1. `navio2-modules.sh`: attempts required module loads and verifies key Navio2 paths.
 2. `navio2-permissions.sh`: applies group and mode to required device/sysfs paths.
 3. `navio2-time-sync.sh`: waits for `timedatectl` synchronization.
 4. `navio2-gps-lock.sh`: polls GPS status path/value until lock or timeout.
@@ -79,4 +79,6 @@ Set `DRY_RUN=1` in `/etc/default/navio2-gates` to avoid hard-failing on missing 
 
 - In normal mode (`DRY_RUN=0`), required missing paths fail the gate.
 - In dry-run mode, missing Navio2 paths are warnings.
+- Module load attempts for `rcio_adc` / `rcio_pwm` are best-effort by default (`MODULE_LOAD_STRICT=0`) to tolerate kernels where drivers are built-in or not loadable as modules.
+- Set `MODULE_LOAD_STRICT=1` to hard-fail on any `modprobe` failure.
 - Tune thresholds and paths in `/etc/default/navio2-gates`.
