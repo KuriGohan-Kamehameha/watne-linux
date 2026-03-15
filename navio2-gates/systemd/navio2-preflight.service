@@ -1,0 +1,14 @@
+[Unit]
+Description=Navio2 gate: hardware preflight checks before ArduPilot
+After=navio2-gps-lock.service
+Requires=navio2-gps-lock.service
+Before=ardupilot.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=-/etc/default/navio2-gates
+ExecStart=/usr/local/lib/navio2-gates/navio2-preflight.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

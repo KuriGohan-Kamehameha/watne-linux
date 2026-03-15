@@ -1,0 +1,14 @@
+[Unit]
+Description=Navio2 gate: wait for GPS lock signal
+After=navio2-time-sync.service
+Requires=navio2-time-sync.service
+Before=navio2-preflight.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=-/etc/default/navio2-gates
+ExecStart=/usr/local/lib/navio2-gates/navio2-gps-lock.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

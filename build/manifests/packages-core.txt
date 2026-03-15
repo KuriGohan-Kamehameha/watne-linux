@@ -1,0 +1,20 @@
+# Base system
+systemd
+systemd-timesyncd
+udev
+ca-certificates
+openssh-server
+sudo
+
+# Hardware interfaces
+i2c-tools
+spi-tools
+pigpio
+
+# Build/runtime support
+kmod
+initramfs-tools
+
+# ArduPilot dependencies (minimal baseline)
+python3
+python3-pip

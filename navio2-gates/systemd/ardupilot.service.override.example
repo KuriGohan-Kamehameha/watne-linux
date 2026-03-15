@@ -1,0 +1,6 @@
+# Example: /etc/systemd/system/ardupilot.service.d/override.conf
+# This makes ArduPilot wait for Navio2 preflight completion.
+
+[Unit]
+Requires=navio2-preflight.service
+After=navio2-preflight.service
