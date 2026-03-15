@@ -1,0 +1,41 @@
+Date: 2026-03-15T15:41:05Z
+Host: Darwin 25.3.0
+
+=== Day 1 Task 1: navio2-modules.sh dry-run ===
+2026-03-15T15:41:05Z [navio2-modules] Starting module gate (DRY_RUN=1)
+2026-03-15T15:41:05Z [navio2-modules] Loading module: rcio_adc
+2026-03-15T15:41:05Z [navio2-modules] DRY_RUN: modprobe rcio_adc
+2026-03-15T15:41:05Z [navio2-modules] Loading module: rcio_pwm
+2026-03-15T15:41:05Z [navio2-modules] DRY_RUN: modprobe rcio_pwm
+2026-03-15T15:41:05Z [navio2-modules] WARN: Missing expected Navio2 path in dry-run: /sys/kernel/rcio/adc
+2026-03-15T15:41:05Z [navio2-modules] WARN: Missing expected Navio2 path in dry-run: /sys/class/pwm/pwmchip0
+2026-03-15T15:41:05Z [navio2-modules] WARN: Missing expected Navio2 path in dry-run: /dev/spidev0.0
+2026-03-15T15:41:05Z [navio2-modules] Module gate passed
+exit: 0
+
+=== Day 1 Task 1: navio2-permissions.sh dry-run ===
+2026-03-15T15:41:05Z [navio2-permissions] Starting permissions gate (DRY_RUN=1)
+2026-03-15T15:41:05Z [navio2-permissions] WARN: Missing path in dry-run: /sys/kernel/rcio/adc/ch0
+2026-03-15T15:41:05Z [navio2-permissions] WARN: Missing path in dry-run: /sys/kernel/rcio/adc/ch1
+2026-03-15T15:41:05Z [navio2-permissions] WARN: Missing path in dry-run: /sys/kernel/rcio/adc/ch2
+2026-03-15T15:41:05Z [navio2-permissions] WARN: Missing path in dry-run: /sys/kernel/rcio/adc/ch3
+2026-03-15T15:41:05Z [navio2-permissions] WARN: Missing path in dry-run: /sys/kernel/rcio/adc/ch4
+2026-03-15T15:41:05Z [navio2-permissions] WARN: Missing path in dry-run: /sys/kernel/rcio/adc/ch5
+2026-03-15T15:41:05Z [navio2-permissions] WARN: Missing path in dry-run: /dev/spidev0.0
+2026-03-15T15:41:05Z [navio2-permissions] Permissions gate passed
+exit: 0
+
+=== Day 1 Task 2: systemd unit static analysis ===
+Chain order:   modules -> permissions -> time-sync -> gps-lock -> preflight -> ardupilot
+After+Requires pairs:   PRESENT on all units except first gate (modules has no predecessor — correct)
+RemainAfterExit=yes:    PRESENT on all 5 oneshot units (required for Requires= to work downstream)
+EnvironmentFile=-:      optional-file flag present on all units (correct; falls back to script defaults)
+ardupilot.service.override.example: Requires+After=navio2-preflight.service (correct gate)
+RESULT: PASS — no structural issues found
+
+=== Bugs found and fixed this session ===
+1. navio2-gates/env/navio2-gates.env: DRY_RUN=0 (unconditional assignment) overrode an exported DRY_RUN=1
+   Fix: changed to DRY_RUN="${DRY_RUN:-0}" so the caller's env-var takes precedence
+2. All 14 scripts: CDPATH= (SC1007 warning — shellcheck false-positive risk)
+   Fix: changed to CDPATH='' in all scripts (functionally identical, shellcheck-clean)
+3. .shellcheckrc: added source-path=SCRIPTDIR to fix SC1091 false-positive on sourced lib.sh paths
