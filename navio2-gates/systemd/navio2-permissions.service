@@ -1,0 +1,14 @@
+[Unit]
+Description=Navio2 gate: apply device and sysfs permissions
+After=navio2-modules.service
+Requires=navio2-modules.service
+Before=navio2-time-sync.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=-/etc/default/navio2-gates
+ExecStart=/usr/local/lib/navio2-gates/navio2-permissions.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

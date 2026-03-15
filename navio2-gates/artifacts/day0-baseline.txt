@@ -1,0 +1,132 @@
+=== Day 0 Baseline ===
+Date: 2026-03-15T15:36:13Z
+Host OS: Darwin 25.3.0 arm64
+Working dir: /Users/sat/watne-linux
+
+=== Files ===
+./BUILD.md
+./build/config/versions.env
+./build/manifests/packages-core.txt
+./build/manifests/packages-optional.txt
+./build/scripts/00-prereq-check.sh
+./build/scripts/10-fetch-sources.sh
+./build/scripts/11-capture-lockfile.sh
+./build/scripts/20-build-kernel.sh
+./build/scripts/30-build-rootfs.sh
+./build/scripts/lib.sh
+./build/scripts/run-build.sh
+./navio2-gates/README.md
+./navio2-gates/START_WORK_SEQUENCE.md
+./navio2-gates/artifacts/day0-baseline.txt
+./navio2-gates/env/navio2-gates.env
+./navio2-gates/scripts/navio2-gate-status.sh
+./navio2-gates/scripts/navio2-gps-lock.sh
+./navio2-gates/scripts/navio2-modules.sh
+./navio2-gates/scripts/navio2-permissions.sh
+./navio2-gates/scripts/navio2-preflight.sh
+./navio2-gates/scripts/navio2-time-sync.sh
+./navio2-gates/scripts/run-gates.sh
+./navio2-gates/systemd/ardupilot.service.override.example
+./navio2-gates/systemd/navio2-gps-lock.service
+./navio2-gates/systemd/navio2-modules.service
+./navio2-gates/systemd/navio2-permissions.service
+./navio2-gates/systemd/navio2-preflight.service
+./navio2-gates/systemd/navio2-time-sync.service
+
+=== Script inventory ===
+SYNTAX-OK  +x   build/scripts/00-prereq-check.sh
+SYNTAX-OK  +x   build/scripts/10-fetch-sources.sh
+SYNTAX-OK  +x   build/scripts/11-capture-lockfile.sh
+SYNTAX-OK  +x   build/scripts/20-build-kernel.sh
+SYNTAX-OK  +x   build/scripts/30-build-rootfs.sh
+SYNTAX-OK  +x   build/scripts/lib.sh
+SYNTAX-OK  +x   build/scripts/run-build.sh
+SYNTAX-OK  +x   navio2-gates/scripts/navio2-gate-status.sh
+SYNTAX-OK  +x   navio2-gates/scripts/navio2-gps-lock.sh
+SYNTAX-OK  +x   navio2-gates/scripts/navio2-modules.sh
+SYNTAX-OK  +x   navio2-gates/scripts/navio2-permissions.sh
+SYNTAX-OK  +x   navio2-gates/scripts/navio2-preflight.sh
+SYNTAX-OK  +x   navio2-gates/scripts/navio2-time-sync.sh
+SYNTAX-OK  +x   navio2-gates/scripts/run-gates.sh
+
+=== navio2-gates env ===
+# Global Navio2 gate settings
+# Set to 1 to simulate actions and skip hard failures on missing Navio2 paths.
+DRY_RUN=0
+
+# Common paths
+RCIO_ROOT=/sys/kernel/rcio
+RCIO_ADC_DIR=/sys/kernel/rcio/adc
+PWMCHIP_PATH=/sys/class/pwm/pwmchip0
+SPI_NODE=/dev/spidev0.0
+GPS_STATUS_PATH=/run/navio2/gps_status
+
+# Module gate
+REQUIRED_MODULES="rcio_adc rcio_pwm"
+MODULE_EXPECTED_PATHS="${RCIO_ADC_DIR} ${PWMCHIP_PATH} ${SPI_NODE}"
+
+# Permissions gate
+PERMISSIONS_GROUP=dialout
+PERMISSIONS_MODE=0660
+PERMISSIONS_PATHS="${RCIO_ADC_DIR}/ch0 ${RCIO_ADC_DIR}/ch1 ${RCIO_ADC_DIR}/ch2 ${RCIO_ADC_DIR}/ch3 ${RCIO_ADC_DIR}/ch4 ${RCIO_ADC_DIR}/ch5 ${SPI_NODE}"
+
+# Time sync gate
+TIME_SYNC_TIMEOUT_SEC=120
+TIME_SYNC_INTERVAL_SEC=2
+
+# GPS lock gate
+GPS_LOCK_VALUE=LOCKED
+GPS_TIMEOUT_SEC=180
+GPS_INTERVAL_SEC=2
+
+# Preflight gate
+ADC_CHANNELS="0 1 2 3 4 5"
+ADC_PATH_PREFIX="${RCIO_ADC_DIR}/ch"
+PREFLIGHT_LOG_FILE=/var/log/navio2-preflight.log
+PREFLIGHT_REQUIRE_SPI=0
+
+# Runner behavior
+RUN_GATES_CONTINUE_ON_FAIL=1
+
+=== Dry-run prereq check ===
+2026-03-15T15:36:14Z [build] Running prerequisite checks
+2026-03-15T15:36:14Z [build] WARN: GNU Make >= 4 required for real builds. Found 3.81 via make.
+2026-03-15T15:36:14Z [build] WARN: Filesystem appears case-insensitive. Kernel sources may collide.
+2026-03-15T15:36:14Z [build] WARN: Cross compiler missing: aarch64-linux-gnu-gcc
+2026-03-15T15:36:14Z [build] Prerequisite checks passed
+
+=== shellcheck availability ===
+shellcheck not found
+shellcheck not installed
+
+=== versions.env ===
+# Candidate identity
+CANDIDATE_ID=navio2-v1-alpha1
+
+# Target stack
+DEBIAN_RELEASE=trixie
+TARGET_ARCH=arm64
+
+# Source refs
+RPI_LINUX_REPO=https://github.com/raspberrypi/linux.git
+RPI_LINUX_BRANCH=rpi-6.12.y
+RPI_FIRMWARE_REPO=https://github.com/raspberrypi/firmware.git
+RPI_FIRMWARE_REF=master
+ARDUPILOT_REPO=https://github.com/ArduPilot/ardupilot.git
+ARDUPILOT_TAG=Copter-4.6.3
+
+# Kernel build
+KERNEL_DEFCONFIG=bcm2711_defconfig
+KERNEL_LOCALVERSION=-navio2rt-v1
+KERNEL_IMAGE_NAME=Image
+KERNEL_JOBS=8
+
+# Toolchain
+CROSS_COMPILE=aarch64-linux-gnu-
+MAKE_BIN=make
+
+# Workspace layout
+WORK_ROOT=build/work
+SRC_ROOT=build/work/src
+OUT_ROOT=build/work/out
+LOG_ROOT=build/work/logs

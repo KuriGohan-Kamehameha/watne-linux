@@ -1,0 +1,14 @@
+# Build outputs and source checkouts — never commit these
+build/work/
+
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Editor / IDE
+.vscode/
+*.swp
+*~
+
+# Shell history artifacts
+*.log.tmp

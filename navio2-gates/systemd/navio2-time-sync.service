@@ -1,0 +1,15 @@
+[Unit]
+Description=Navio2 gate: wait for system time synchronization
+After=network-online.target systemd-timesyncd.service navio2-permissions.service
+Wants=network-online.target
+Requires=navio2-permissions.service
+Before=navio2-gps-lock.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=-/etc/default/navio2-gates
+ExecStart=/usr/local/lib/navio2-gates/navio2-time-sync.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

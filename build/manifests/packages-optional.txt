@@ -1,0 +1,13 @@
+# Diagnostics
+htop
+jq
+rsync
+vim
+
+# Bench tooling
+stress-ng
+rt-tests
+chrony
+
+# Networking and telemetry helpers
+mavproxy

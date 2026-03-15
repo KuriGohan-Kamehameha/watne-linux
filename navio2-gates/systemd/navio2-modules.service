@@ -1,0 +1,13 @@
+[Unit]
+Description=Navio2 gate: load kernel modules and verify base paths
+After=systemd-modules-load.service local-fs.target
+Before=navio2-permissions.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=-/etc/default/navio2-gates
+ExecStart=/usr/local/lib/navio2-gates/navio2-modules.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
