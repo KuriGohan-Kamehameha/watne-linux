@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SCRIPT_NAME="run-gates"
-SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+SCRIPT_DIR="$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)"
 DEFAULT_ENV_FILE="${SCRIPT_DIR%/scripts}/env/navio2-gates.env"
 ENV_FILE="${NAVIO2_GATES_ENV_FILE:-/etc/default/navio2-gates}"
 
