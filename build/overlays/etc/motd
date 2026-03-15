@@ -1,0 +1,7 @@
+Welcome to watne-linux (Navio2 autopilot platform)
+
+  Kernel:     6.12.y-navio2rt
+  ArduPilot:  Copter-4.6.3
+  ROS 2:      Jazzy
+  RealSense:  librealsense2
+

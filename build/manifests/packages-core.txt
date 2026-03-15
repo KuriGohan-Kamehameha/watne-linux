@@ -9,11 +9,16 @@ sudo
 # Hardware interfaces
 i2c-tools
 spi-tools
-pigpio
+
+# Networking
+iproute2
+curl
+wpasupplicant
 
 # Build/runtime support
 kmod
 initramfs-tools
+locales
 
 # ArduPilot dependencies (minimal baseline)
 python3

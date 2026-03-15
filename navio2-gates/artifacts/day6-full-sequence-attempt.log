@@ -1,0 +1,167 @@
+Date: 2026-03-15T21:19:53Z
+Host: Darwin 25.3.0 arm64
+Workspace: /Users/sat/watne-linux
+
+=== Navio2 Gates Sequence (continue-on-fail) ===
+Env: DRY_RUN=0 RUN_GATES_CONTINUE_ON_FAIL=1 TIME_SYNC_TIMEOUT_SEC=8 GPS_TIMEOUT_SEC=8
+
+--- STEP navio2-modules.sh ---
+cmd: DRY_RUN=0 RUN_GATES_CONTINUE_ON_FAIL=1 TIME_SYNC_TIMEOUT_SEC=8 GPS_TIMEOUT_SEC=8 NAVIO2_GATES_ENV_FILE=navio2-gates/env/navio2-gates.env navio2-gates/scripts/navio2-modules.sh
+2026-03-15T21:19:53Z [navio2-modules] Starting module gate (DRY_RUN=0 strict_load=0)
+2026-03-15T21:19:53Z [navio2-modules] Loading module: rcio_adc
+navio2-gates/scripts/navio2-modules.sh: line 40: modprobe: command not found
+2026-03-15T21:19:53Z [navio2-modules] WARN: Unable to determine module availability for: rcio_adc (modinfo unavailable; continuing)
+2026-03-15T21:19:53Z [navio2-modules] Loading module: rcio_pwm
+navio2-gates/scripts/navio2-modules.sh: line 40: modprobe: command not found
+2026-03-15T21:19:53Z [navio2-modules] WARN: Unable to determine module availability for: rcio_pwm (modinfo unavailable; continuing)
+2026-03-15T21:19:53Z [navio2-modules] ERROR: Missing required Navio2 path: /sys/kernel/rcio/adc
+2026-03-15T21:19:53Z [navio2-modules] ERROR: Missing required Navio2 path: /sys/class/pwm/pwmchip0
+2026-03-15T21:19:53Z [navio2-modules] ERROR: Missing required Navio2 path: /dev/spidev0.0
+2026-03-15T21:19:53Z [navio2-modules] ERROR: Module gate failed with 3 issue(s)
+exit_code: 1
+
+--- STEP navio2-permissions.sh ---
+cmd: DRY_RUN=0 RUN_GATES_CONTINUE_ON_FAIL=1 TIME_SYNC_TIMEOUT_SEC=8 GPS_TIMEOUT_SEC=8 NAVIO2_GATES_ENV_FILE=navio2-gates/env/navio2-gates.env navio2-gates/scripts/navio2-permissions.sh
+2026-03-15T21:19:54Z [navio2-permissions] Starting permissions gate (DRY_RUN=0)
+2026-03-15T21:19:54Z [navio2-permissions] ERROR: Missing required path: /sys/kernel/rcio/adc/ch0
+2026-03-15T21:19:54Z [navio2-permissions] ERROR: Missing required path: /sys/kernel/rcio/adc/ch1
+2026-03-15T21:19:54Z [navio2-permissions] ERROR: Missing required path: /sys/kernel/rcio/adc/ch2
+2026-03-15T21:19:54Z [navio2-permissions] ERROR: Missing required path: /sys/kernel/rcio/adc/ch3
+2026-03-15T21:19:54Z [navio2-permissions] ERROR: Missing required path: /sys/kernel/rcio/adc/ch4
+2026-03-15T21:19:54Z [navio2-permissions] ERROR: Missing required path: /sys/kernel/rcio/adc/ch5
+2026-03-15T21:19:54Z [navio2-permissions] ERROR: Missing required path: /dev/spidev0.0
+2026-03-15T21:19:54Z [navio2-permissions] ERROR: Permissions gate failed with 7 issue(s)
+exit_code: 1
+
+--- STEP navio2-time-sync.sh ---
+cmd: DRY_RUN=0 RUN_GATES_CONTINUE_ON_FAIL=1 TIME_SYNC_TIMEOUT_SEC=8 GPS_TIMEOUT_SEC=8 NAVIO2_GATES_ENV_FILE=navio2-gates/env/navio2-gates.env navio2-gates/scripts/navio2-time-sync.sh
+2026-03-15T21:19:54Z [navio2-time-sync] Starting time sync gate (DRY_RUN=0 timeout=8s interval=2s)
+2026-03-15T21:19:54Z [navio2-time-sync] ERROR: timedatectl command is required but not available
+exit_code: 1
+
+--- STEP navio2-gps-lock.sh ---
+cmd: DRY_RUN=0 RUN_GATES_CONTINUE_ON_FAIL=1 TIME_SYNC_TIMEOUT_SEC=8 GPS_TIMEOUT_SEC=8 NAVIO2_GATES_ENV_FILE=navio2-gates/env/navio2-gates.env navio2-gates/scripts/navio2-gps-lock.sh
+2026-03-15T21:19:54Z [navio2-gps-lock] Starting GPS lock gate (DRY_RUN=0 path=/run/navio2/gps_status expected=LOCKED timeout=8s)
+2026-03-15T21:19:54Z [navio2-gps-lock] GPS status path not readable yet: /run/navio2/gps_status
+2026-03-15T21:19:56Z [navio2-gps-lock] GPS status path not readable yet: /run/navio2/gps_status
+2026-03-15T21:19:58Z [navio2-gps-lock] GPS status path not readable yet: /run/navio2/gps_status
+2026-03-15T21:20:00Z [navio2-gps-lock] GPS status path not readable yet: /run/navio2/gps_status
+2026-03-15T21:20:02Z [navio2-gps-lock] ERROR: Timeout waiting for GPS lock (/run/navio2/gps_status expected 'LOCKED')
+exit_code: 1
+
+--- STEP navio2-preflight.sh ---
+cmd: DRY_RUN=0 RUN_GATES_CONTINUE_ON_FAIL=1 TIME_SYNC_TIMEOUT_SEC=8 GPS_TIMEOUT_SEC=8 NAVIO2_GATES_ENV_FILE=navio2-gates/env/navio2-gates.env navio2-gates/scripts/navio2-preflight.sh
+2026-03-15T21:20:02Z [navio2-preflight] Starting preflight gate (DRY_RUN=0)
+2026-03-15T21:20:02Z [navio2-preflight] ERROR: ADC channel path not readable: /sys/kernel/rcio/adc/ch0
+2026-03-15T21:20:02Z [navio2-preflight] ERROR: ADC channel path not readable: /sys/kernel/rcio/adc/ch1
+2026-03-15T21:20:02Z [navio2-preflight] ERROR: ADC channel path not readable: /sys/kernel/rcio/adc/ch2
+2026-03-15T21:20:02Z [navio2-preflight] ERROR: ADC channel path not readable: /sys/kernel/rcio/adc/ch3
+2026-03-15T21:20:02Z [navio2-preflight] ERROR: ADC channel path not readable: /sys/kernel/rcio/adc/ch4
+2026-03-15T21:20:02Z [navio2-preflight] ERROR: ADC channel path not readable: /sys/kernel/rcio/adc/ch5
+navio2-gates/scripts/navio2-preflight.sh: line 80: /var/log/navio2-preflight.log: Permission denied
+2026-03-15T21:20:02Z [navio2-preflight] ERROR: Failed to append to preflight log: /var/log/navio2-preflight.log
+2026-03-15T21:20:02Z [navio2-preflight] WARN: Optional SPI node not present: /dev/spidev0.0
+2026-03-15T21:20:02Z [navio2-preflight] ERROR: Preflight gate failed with 7 issue(s)
+exit_code: 1
+
+gate_failures: 5
+
+=== Build Sequence (script order, continue-on-fail) ===
+Env: DRY_RUN=1
+
+--- STEP 00-prereq-check.sh ---
+cmd: DRY_RUN=1 build/scripts/00-prereq-check.sh
+2026-03-15T21:20:02Z [build] Running prerequisite checks
+2026-03-15T21:20:02Z [build] ERROR: Host is not Linux. Use a Linux VM/runner or set ALLOW_NON_LINUX=1 for scaffolding only.
+exit_code: 1
+
+--- STEP 10-fetch-sources.sh ---
+cmd: DRY_RUN=1 build/scripts/10-fetch-sources.sh
+2026-03-15T21:20:02Z [build] Cloning https://github.com/raspberrypi/linux.git -> /Users/sat/watne-linux/build/work/src/linux
+2026-03-15T21:20:02Z [build] DRY_RUN: git clone --depth 1 --branch rpi-6.12.y https://github.com/raspberrypi/linux.git /Users/sat/watne-linux/build/work/src/linux
+2026-03-15T21:20:02Z [build] Fetching updates in /Users/sat/watne-linux/build/work/src/linux
+2026-03-15T21:20:02Z [build] DRY_RUN: git -C /Users/sat/watne-linux/build/work/src/linux fetch --depth 1 origin rpi-6.12.y
+2026-03-15T21:20:02Z [build] Checking out rpi-6.12.y in /Users/sat/watne-linux/build/work/src/linux
+2026-03-15T21:20:02Z [build] DRY_RUN: git -C /Users/sat/watne-linux/build/work/src/linux checkout rpi-6.12.y
+2026-03-15T21:20:02Z [build] Cloning https://github.com/raspberrypi/firmware.git -> /Users/sat/watne-linux/build/work/src/firmware
+2026-03-15T21:20:02Z [build] DRY_RUN: git clone --depth 1 --branch master https://github.com/raspberrypi/firmware.git /Users/sat/watne-linux/build/work/src/firmware
+2026-03-15T21:20:02Z [build] Fetching updates in /Users/sat/watne-linux/build/work/src/firmware
+2026-03-15T21:20:02Z [build] DRY_RUN: git -C /Users/sat/watne-linux/build/work/src/firmware fetch --depth 1 origin master
+2026-03-15T21:20:02Z [build] Checking out master in /Users/sat/watne-linux/build/work/src/firmware
+2026-03-15T21:20:02Z [build] DRY_RUN: git -C /Users/sat/watne-linux/build/work/src/firmware checkout master
+2026-03-15T21:20:02Z [build] Cloning https://github.com/ArduPilot/ardupilot.git -> /Users/sat/watne-linux/build/work/src/ardupilot
+2026-03-15T21:20:02Z [build] DRY_RUN: git clone --depth 1 --branch Copter-4.6.3 https://github.com/ArduPilot/ardupilot.git /Users/sat/watne-linux/build/work/src/ardupilot
+2026-03-15T21:20:02Z [build] Fetching updates in /Users/sat/watne-linux/build/work/src/ardupilot
+2026-03-15T21:20:02Z [build] DRY_RUN: git -C /Users/sat/watne-linux/build/work/src/ardupilot fetch --depth 1 origin Copter-4.6.3
+2026-03-15T21:20:02Z [build] Checking out Copter-4.6.3 in /Users/sat/watne-linux/build/work/src/ardupilot
+2026-03-15T21:20:02Z [build] DRY_RUN: git -C /Users/sat/watne-linux/build/work/src/ardupilot checkout Copter-4.6.3
+2026-03-15T21:20:02Z [build] Source fetch complete
+exit_code: 0
+
+--- STEP 11-capture-lockfile.sh ---
+cmd: DRY_RUN=1 build/scripts/11-capture-lockfile.sh
+exit_code: 1
+
+--- STEP 20-build-kernel.sh ---
+cmd: DRY_RUN=1 build/scripts/20-build-kernel.sh
+2026-03-15T21:20:02Z [build] ERROR: Linux source not found. Run 10-fetch-sources.sh first.
+exit_code: 1
+
+--- STEP 30-build-rootfs.sh ---
+cmd: DRY_RUN=1 build/scripts/30-build-rootfs.sh
+2026-03-15T21:20:02Z [build] Preparing rootfs directory: /Users/sat/watne-linux/build/work/out/rootfs/navio2-v1-alpha1
+2026-03-15T21:20:02Z [build] DRY_RUN: mkdir -p /Users/sat/watne-linux/build/work/out/rootfs/navio2-v1-alpha1
+2026-03-15T21:20:02Z [build] DRY_RUN: would run debootstrap for trixie/arm64
+2026-03-15T21:20:02Z [build] DRY_RUN: would install core packages from /Users/sat/watne-linux/build/manifests/packages-core.txt
+2026-03-15T21:20:02Z [build] DRY_RUN: optional packages listed in /Users/sat/watne-linux/build/manifests/packages-optional.txt
+exit_code: 0
+
+--- STEP 31-configure-rootfs.sh ---
+cmd: DRY_RUN=1 build/scripts/31-configure-rootfs.sh
+bash: build/scripts/31-configure-rootfs.sh: Permission denied
+exit_code: 126
+
+--- STEP 32-install-kernel.sh ---
+cmd: DRY_RUN=1 build/scripts/32-install-kernel.sh
+bash: build/scripts/32-install-kernel.sh: Permission denied
+exit_code: 126
+
+--- STEP 33-install-navio2-gates.sh ---
+cmd: DRY_RUN=1 build/scripts/33-install-navio2-gates.sh
+bash: build/scripts/33-install-navio2-gates.sh: Permission denied
+exit_code: 126
+
+--- STEP 34-install-emlidtool.sh ---
+cmd: DRY_RUN=1 build/scripts/34-install-emlidtool.sh
+bash: build/scripts/34-install-emlidtool.sh: Permission denied
+exit_code: 126
+
+--- STEP 35-build-ardupilot.sh ---
+cmd: DRY_RUN=1 build/scripts/35-build-ardupilot.sh
+bash: build/scripts/35-build-ardupilot.sh: Permission denied
+exit_code: 126
+
+--- STEP 36-install-ros2.sh ---
+cmd: DRY_RUN=1 build/scripts/36-install-ros2.sh
+bash: build/scripts/36-install-ros2.sh: Permission denied
+exit_code: 126
+
+--- STEP 37-build-realsense.sh ---
+cmd: DRY_RUN=1 build/scripts/37-build-realsense.sh
+bash: build/scripts/37-build-realsense.sh: Permission denied
+exit_code: 126
+
+--- STEP 50-assemble-image.sh ---
+cmd: DRY_RUN=1 build/scripts/50-assemble-image.sh
+bash: build/scripts/50-assemble-image.sh: Permission denied
+exit_code: 126
+
+--- STEP 60-verify-image.sh ---
+cmd: DRY_RUN=1 build/scripts/60-verify-image.sh
+bash: build/scripts/60-verify-image.sh: Permission denied
+exit_code: 126
+
+build_failures: 12
+
+total_failures: 17
+overall_status: FAIL

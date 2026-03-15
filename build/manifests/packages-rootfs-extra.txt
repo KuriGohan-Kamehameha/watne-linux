@@ -1,0 +1,11 @@
+# Build dependencies for in-chroot compilation (RealSense, ArduPilot)
+build-essential
+cmake
+libusb-1.0-0-dev
+pkg-config
+git
+
+# Python ecosystem (watnetool, MAVProxy, ArduPilot)
+python3-dev
+python3-serial
+python3-venv

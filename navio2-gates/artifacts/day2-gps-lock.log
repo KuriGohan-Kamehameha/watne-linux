@@ -1,0 +1,44 @@
+Date: 2026-03-15T17:55:08Z
+Host: Darwin 25.3.0
+
+=== Day 2 Task 2: navio2-gps-lock.sh dry-run ===
+2026-03-15T17:55:08Z [navio2-gps-lock] Starting GPS lock gate (DRY_RUN=1 path=/run/navio2/gps_status expected=LOCKED timeout=180s)
+2026-03-15T17:55:08Z [navio2-gps-lock] WARN: GPS status path not readable in dry-run (/run/navio2/gps_status); continuing
+exit: 0
+
+RESULT: PASS (after bug fix)
+- GPS status path /run/navio2/gps_status not present on macOS (expected)
+- DRY_RUN early-exit added and verified (see bugs below)
+- Timeout (180s), interval (2s), lock value (LOCKED) correctly read from env
+- Env-var override for GPS_TIMEOUT_SEC verified working after env file fix
+
+=== Systemd unit analysis: navio2-gps-lock.service ===
+After=navio2-time-sync.service
+Requires=navio2-time-sync.service
+Before=navio2-preflight.service
+Type=oneshot, RemainAfterExit=yes
+EnvironmentFile=-/etc/default/navio2-gates
+ExecStart=/usr/local/lib/navio2-gates/navio2-gps-lock.sh
+VERDICT: OK
+- Correctly chains After+Requires on navio2-time-sync.service
+- Before=navio2-preflight.service maintains gate order
+
+=== Bugs found and fixed this session ===
+1. navio2-gps-lock.sh: No DRY_RUN early-exit when GPS_STATUS_PATH is missing.
+   Unlike navio2-time-sync.sh which exits early when timedatectl is unavailable,
+   GPS lock would poll for the full timeout (180s) before the DRY_RUN fallback triggered.
+   Fix: Added early-exit check before the polling loop:
+     if [ ! -r "$GPS_STATUS_PATH" ] && [ "$DRY_RUN" = "1" ]; then
+         warn "GPS status path not readable in dry-run ..."; return 0
+     fi
+
+2. navio2-gates.env: All non-DRY_RUN variables used unconditional assignment.
+   Same pattern as the DRY_RUN bug fixed in Day 1 — env-var overrides from
+   the caller were clobbered by the env file source.
+   Fix: Changed all assignments to use ${VAR:-default} pattern.
+   Affected: RCIO_ROOT, RCIO_ADC_DIR, PWMCHIP_PATH, SPI_NODE, GPS_STATUS_PATH,
+   REQUIRED_MODULES, MODULE_EXPECTED_PATHS, PERMISSIONS_GROUP, PERMISSIONS_MODE,
+   PERMISSIONS_PATHS, TIME_SYNC_TIMEOUT_SEC, TIME_SYNC_INTERVAL_SEC,
+   GPS_LOCK_VALUE, GPS_TIMEOUT_SEC, GPS_INTERVAL_SEC, ADC_CHANNELS,
+   ADC_PATH_PREFIX, PREFLIGHT_LOG_FILE, PREFLIGHT_REQUIRE_SPI,
+   RUN_GATES_CONTINUE_ON_FAIL

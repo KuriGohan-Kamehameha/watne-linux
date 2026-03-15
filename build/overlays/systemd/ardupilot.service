@@ -1,0 +1,16 @@
+[Unit]
+Description=ArduPilot Flight Controller
+Requires=navio2-preflight.service
+After=navio2-preflight.service
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/arducopter
+Restart=on-failure
+RestartSec=5
+User=root
+
+[Install]
+WantedBy=multi-user.target

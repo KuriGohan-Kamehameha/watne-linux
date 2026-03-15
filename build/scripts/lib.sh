@@ -40,3 +40,48 @@ run_cmd() {
 require_cmd() {
     command -v "$1" >/dev/null 2>&1 || die "Missing required command: $1"
 }
+
+# Mount virtual filesystems for chroot and execute a command.
+# Usage: chroot_cmd /path/to/rootfs command [args...]
+chroot_cmd() {
+    local rootfs="$1"; shift
+
+    if [ "${DRY_RUN:-0}" = "1" ]; then
+        log "DRY_RUN: chroot $rootfs $*"
+        return 0
+    fi
+
+    mount --bind /proc "$rootfs/proc" 2>/dev/null || true
+    mount --bind /sys  "$rootfs/sys"  2>/dev/null || true
+    mount --bind /dev  "$rootfs/dev"  2>/dev/null || true
+    mount --bind /dev/pts "$rootfs/dev/pts" 2>/dev/null || true
+    cp /etc/resolv.conf "$rootfs/etc/resolv.conf" 2>/dev/null || true
+
+    local rc=0
+    chroot "$rootfs" "$@" || rc=$?
+
+    umount "$rootfs/dev/pts" 2>/dev/null || true
+    umount "$rootfs/dev"     2>/dev/null || true
+    umount "$rootfs/sys"     2>/dev/null || true
+    umount "$rootfs/proc"    2>/dev/null || true
+
+    return $rc
+}
+
+# Bind-mount virtual filesystems for chroot (call once, cleanup with chroot_teardown).
+chroot_setup() {
+    local rootfs="$1"
+    mount --bind /proc "$rootfs/proc" 2>/dev/null || true
+    mount --bind /sys  "$rootfs/sys"  2>/dev/null || true
+    mount --bind /dev  "$rootfs/dev"  2>/dev/null || true
+    mount --bind /dev/pts "$rootfs/dev/pts" 2>/dev/null || true
+    cp /etc/resolv.conf "$rootfs/etc/resolv.conf" 2>/dev/null || true
+}
+
+chroot_teardown() {
+    local rootfs="$1"
+    umount "$rootfs/dev/pts" 2>/dev/null || true
+    umount "$rootfs/dev"     2>/dev/null || true
+    umount "$rootfs/sys"     2>/dev/null || true
+    umount "$rootfs/proc"    2>/dev/null || true
+}

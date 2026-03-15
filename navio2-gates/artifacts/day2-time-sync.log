@@ -1,0 +1,25 @@
+Date: 2026-03-15T17:55:08Z
+Host: Darwin 25.3.0
+
+=== Day 2 Task 1: navio2-time-sync.sh dry-run ===
+2026-03-15T17:55:08Z [navio2-time-sync] Starting time sync gate (DRY_RUN=1 timeout=120s interval=2s)
+2026-03-15T17:55:08Z [navio2-time-sync] WARN: timedatectl not available in dry-run; continuing
+exit: 0
+
+RESULT: PASS
+- timedatectl not available on macOS host (expected)
+- DRY_RUN early-exit works correctly for missing timedatectl
+- Timeout (120s) and interval (2s) parameters correctly read from env
+
+=== Systemd unit analysis: navio2-time-sync.service ===
+After=network-online.target systemd-timesyncd.service navio2-permissions.service
+Wants=network-online.target
+Requires=navio2-permissions.service
+Before=navio2-gps-lock.service
+Type=oneshot, RemainAfterExit=yes
+EnvironmentFile=-/etc/default/navio2-gates
+ExecStart=/usr/local/lib/navio2-gates/navio2-time-sync.sh
+VERDICT: OK
+- Correctly waits for network (Wants=network-online.target) before NTP check
+- Correctly chains After+Requires on navio2-permissions.service
+- Before=navio2-gps-lock.service maintains gate order

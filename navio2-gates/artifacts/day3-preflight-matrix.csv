@@ -1,0 +1,5 @@
+scenario,dry_run,adc_present,spi_present,require_spi,log_writable,expected_exit,actual_exit,result
+dry-run-baseline,1,no,no,0,n/a,0,0,PASS
+dry-run-require-spi,1,no,no,1,n/a,0,0,PASS
+live-missing-all,0,no,no,0,no,1,1,PASS
+live-missing-all-require-spi,0,no,no,1,no,1,1,PASS

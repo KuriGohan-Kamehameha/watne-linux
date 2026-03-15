@@ -1,0 +1,8 @@
+[Match]
+Name=end0 eth0
+
+[Network]
+DHCP=yes
+
+[DHCPv4]
+UseDNS=yes

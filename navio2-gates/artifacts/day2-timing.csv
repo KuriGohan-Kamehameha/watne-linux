@@ -1,0 +1,4 @@
+gate,mode,timeout_sec,interval_sec,elapsed_sec,result,notes
+navio2-time-sync,dry-run,120,2,0,PASS,timedatectl unavailable; early-exit
+navio2-gps-lock,dry-run,180,2,0,PASS,GPS path missing; early-exit (after fix)
+navio2-gps-lock,dry-run-preffix,4,2,4,TIMEOUT+PASS,env-var override verified; DRY_RUN fallback returns 0

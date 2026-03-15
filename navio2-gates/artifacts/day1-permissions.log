@@ -1,0 +1,19 @@
+Date: 2026-03-15T17:47:02Z
+Host: Darwin 25.3.0
+
+=== Day 1 Task 1: navio2-permissions.sh dry-run ===
+2026-03-15T17:47:02Z [navio2-permissions] Starting permissions gate (DRY_RUN=1)
+2026-03-15T17:47:02Z [navio2-permissions] WARN: Missing path in dry-run: /sys/kernel/rcio/adc/ch0
+2026-03-15T17:47:02Z [navio2-permissions] WARN: Missing path in dry-run: /sys/kernel/rcio/adc/ch1
+2026-03-15T17:47:02Z [navio2-permissions] WARN: Missing path in dry-run: /sys/kernel/rcio/adc/ch2
+2026-03-15T17:47:02Z [navio2-permissions] WARN: Missing path in dry-run: /sys/kernel/rcio/adc/ch3
+2026-03-15T17:47:02Z [navio2-permissions] WARN: Missing path in dry-run: /sys/kernel/rcio/adc/ch4
+2026-03-15T17:47:02Z [navio2-permissions] WARN: Missing path in dry-run: /sys/kernel/rcio/adc/ch5
+2026-03-15T17:47:02Z [navio2-permissions] WARN: Missing path in dry-run: /dev/spidev0.0
+2026-03-15T17:47:02Z [navio2-permissions] Permissions gate passed
+exit: 0
+
+RESULT: PASS
+- All 7 permission paths correctly warned as missing (expected on non-Navio2 host)
+- chgrp/chmod calls correctly skipped in dry-run
+- Script exits 0 in dry-run mode with missing paths

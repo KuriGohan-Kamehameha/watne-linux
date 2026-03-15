@@ -31,6 +31,15 @@ main() {
     run_step "10-fetch-sources.sh"
     run_step "20-build-kernel.sh"
     run_step "30-build-rootfs.sh"
+    run_step "31-configure-rootfs.sh"
+    run_step "32-install-kernel.sh"
+    run_step "33-install-navio2-gates.sh"
+    run_step "34-install-emlidtool.sh"
+    run_step "35-build-ardupilot.sh"
+    run_step "36-install-ros2.sh"
+    run_step "37-build-realsense.sh"
+    run_step "50-assemble-image.sh"
+    run_step "60-verify-image.sh"
 
     log "Build orchestrator completed"
 }

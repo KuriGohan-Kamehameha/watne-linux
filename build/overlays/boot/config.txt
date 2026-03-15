@@ -1,0 +1,23 @@
+# watne-linux boot configuration for Raspberry Pi 4 / Navio2
+[all]
+arm_64bit=1
+kernel=kernel8.img
+disable_overscan=1
+
+# Headless autopilot — minimal GPU memory
+gpu_mem=16
+
+# Enable required interfaces for Navio2
+dtparam=spi=on
+dtparam=i2c_arm=on
+dtparam=i2c_arm_baudrate=400000
+
+# UART for GPS: disable Bluetooth on PL011, free ttyAMA0
+dtoverlay=disable-bt
+enable_uart=1
+
+# Navio2 RCIO SPI chip-select
+dtoverlay=spi0-1cs,cs0_pin=8
+
+[pi4]
+max_framebuffers=0

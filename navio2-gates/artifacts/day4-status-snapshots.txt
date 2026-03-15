@@ -1,0 +1,30 @@
+Date: 2026-03-15T17:58:55Z
+Host: Darwin 25.3.0
+
+=== Day 4 Task 2: navio2-gate-status.sh observability ===
+
+--- Snapshot on macOS dev host (no Navio2 hardware, no systemd) ---
+2026-03-15T17:58:55Z [navio2-gate-status] Gate status snapshot (DRY_RUN=1 env=navio2-gates/env/navio2-gates.env)
+path /sys/kernel/rcio/adc             : missing
+path /sys/class/pwm/pwmchip0          : missing
+path /dev/spidev0.0                   : missing
+path /run/navio2/gps_status           : missing
+service navio2-modules.service        : systemctl-unavailable
+service navio2-permissions.service    : systemctl-unavailable
+service navio2-time-sync.service      : systemctl-unavailable
+service navio2-gps-lock.service       : systemctl-unavailable
+service navio2-preflight.service      : systemctl-unavailable
+exit: 0
+
+--- Analysis ---
+Path states reported: present | missing
+  All 4 hardware paths correctly reported as missing on macOS host
+
+Service states reported: active | failed | inactive | systemctl-unavailable
+  All 5 services correctly reported as systemctl-unavailable on macOS host
+  On Navio2 target, these would show active/failed/inactive per systemctl is-active/is-failed
+
+Output format: columnar, machine-parseable (field type key : value)
+Exit code: always 0 (observability tool, does not gate on state)
+
+RESULT: PASS - output is unambiguous for all gate states
