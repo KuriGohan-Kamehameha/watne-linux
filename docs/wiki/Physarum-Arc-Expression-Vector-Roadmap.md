@@ -32,7 +32,7 @@ Before that gate, use narrower terms: **digital cassette**, **candidate regulato
 | Phase | State | Primary outcome | Exit gate |
 |---|---|---|---|
 | 0. Evidence bundle | Complete | Accession-pinned source records and checksums | Every retained source parses and checksum-verifies |
-| 1. Digital map release | In progress | Linear cassette and circular fallback in GenBank, FASTA, SVG, HTML, and JSON | Exact-sequence tests, deterministic rebuild, independent viewer import |
+| 1. Digital map release | Complete | Linear cassette and circular fallback in GenBank, FASTA, SVG, HTML, and JSON | 86 tests, 51 validator gates, byte-identical rebuild, and ApE import/map evidence passed |
 | 2. Native regulatory evidence | Next | Modern locus and transcript-processing evidence for both Physarum flanks | Each flank receives an evidence-qualified disposition |
 | 3. Complete Physarum vector architecture | Blocked on public sequence | Sequence-resolved host vector/backbone and provenance | No inferred bases; every functional module is traceable |
 | 4. Host-compatibility assessment | After 2–3 | Translation and RNA-processing risk report without mutating the reference cassette | Every material incompatibility has a disposition |
@@ -57,7 +57,7 @@ Completed evidence:
 
 ## Phase 1 — Digital map release
 
-**Status:** in progress; current critical path.
+**Status:** complete. The release passed 86 automated tests, 51 executable validator gates, a byte-identical clean rebuild, immutable source-digest anchors, and independent ApE 3.1.10 import/map inspection.
 
 Required release:
 
@@ -197,10 +197,7 @@ Phases 2 and 3 should proceed in parallel. Experimental readiness cannot bypass 
 
 ## Immediate next actions
 
-1. Finish the Phase 1 build and validation package.
-2. Import both GenBank records into ApE and capture topology/feature evidence.
-3. Publish Phase 1 release hashes and update wiki status.
-4. Open two bounded parallel research packets:
+1. Open two bounded parallel research packets:
    - reconcile `M73459.1` and `M73460.1` against current Physarum resources;
    - search repositories, supplements, and author archives for a complete pTB38-family sequence.
-5. Do not begin host adaptation or experimental planning until those packets report their evidence and uncertainties.
+2. Do not begin host adaptation or experimental planning until those packets report their evidence and uncertainties.

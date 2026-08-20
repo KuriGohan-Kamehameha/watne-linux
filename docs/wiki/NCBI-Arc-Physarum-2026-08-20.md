@@ -24,12 +24,12 @@ Included in this commit:
 
 ## Construct-map progress
 
-Last updated: **2026-08-20 17:37:27 UTC**
+Last updated: **2026-08-20 21:30:47 UTC**
 
-The follow-on digital map is being built in durable polyad room
+The Phase 1 digital map release was completed in durable polyad room
 `physarum-arc-expression-vector-20260820`, labelled **Physarum Arc Expression
 Vector**, with profile `triad_core_v1`. CPCS owns bounded execution and
-verification; GPTPCS owns review. The room remains `Running` at room sequence 4.
+verification; GPTPCS owns review.
 
 The selected audit-first design produces both:
 
@@ -39,7 +39,7 @@ The selected audit-first design produces both:
 	 cassette + M77789.2[271..2686]`, placing the unchanged cassette at the SmaI
 	 blunt cut between backbone bases 270 and 271.
 
-Completed evidence gates:
+Release evidence:
 
 - authoritative NCBI `M77789.2`, the local pUC19 GenBank record, and the local
 	pUC19 FASTA are identical across all 2,686 bases;
@@ -51,16 +51,21 @@ Completed evidence gates:
 - executable concatenation checks produced lengths of 2,879 and 5,565 bases,
 	with the planned feature boundaries and no junction padding; and
 - the design specification now records source provenance, immutable formulas,
-	exact coordinates, acceptance gates, and the evidence boundary.
+	exact coordinates, acceptance gates, and the evidence boundary;
+- 86 automated tests and 51 executable validator gates passed after an
+	independent review/fix cycle, including adversarial mutation tests;
+- a clean rebuild was byte-identical to the prior release tree;
+- reviewed source digests are compiled as immutable trust anchors, including
+	separate anchors for all three pUC19 provenance files;
+- ApE 3.1.10 imported the 2,879-bp record as linear with four features and the
+	5,565-bp record as circular with six features; and
+- ApE generated a zero-circle linear canvas and a one-circle circular canvas.
 
-Still in progress:
+Primary release SHA-256 values:
 
-- deterministic build and validation programs;
-- annotated linear and circular GenBank/FASTA deliverables;
-- linear and circular SVG maps plus a self-contained HTML report;
-- manifest, generated-artifact checksums, automated tests, and CPCS verification
-	report; and
-- import and graphical-map inspection in the free ApE plasmid editor.
+- linear GenBank: `bbd212b2a675c5795b99f26bc7c28590c0721b0f3f7085db1cf5efef3707011c`
+- circular GenBank: `8148bf09252d1d7932603a23224da998188b93ace5c7fd76a9bb23203c9c6e1b`
+- manifest: `a6de1659d6e445fb23c8ddcdc1900b4902d857792baa9ab53ecc83ab533465b9`
 
 No complete public base-level record for `pTB38`, `pTB41`, `pXM1`, or `pXM2`
 has been located. Those constructs remain literature precedent only; no sequence
