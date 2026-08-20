@@ -32,7 +32,7 @@ Before that gate, use narrower terms: **digital cassette**, **candidate regulato
 | Phase | State | Primary outcome | Exit gate |
 |---|---|---|---|
 | 0. Evidence bundle | Complete | Accession-pinned source records and checksums | Every retained source parses and checksum-verifies |
-| 1. Digital map release | Complete | Linear cassette and circular fallback in GenBank, FASTA, SVG, HTML, and JSON | 86 tests, 51 validator gates, byte-identical rebuild, and ApE import/map evidence passed |
+| 1. Digital map release | Complete | Linear cassette and circular fallback in GenBank, FASTA, SVG, HTML, and JSON | 92 tests, 51 validator gates, byte-identical rebuild, and ApE import/map evidence passed |
 | 2. Native regulatory evidence | Next | Modern locus and transcript-processing evidence for both Physarum flanks | Each flank receives an evidence-qualified disposition |
 | 3. Complete Physarum vector architecture | Blocked on public sequence | Sequence-resolved host vector/backbone and provenance | No inferred bases; every functional module is traceable |
 | 4. Host-compatibility assessment | After 2–3 | Translation and RNA-processing risk report without mutating the reference cassette | Every material incompatibility has a disposition |
@@ -57,7 +57,7 @@ Completed evidence:
 
 ## Phase 1 — Digital map release
 
-**Status:** complete. The release passed 86 automated tests, 51 executable validator gates, a byte-identical clean rebuild, immutable source-digest anchors, and independent ApE 3.1.10 import/map inspection.
+**Status:** complete. The release passed 92 automated tests, 51 executable validator gates, a byte-identical clean rebuild, immutable source-digest anchors, and independent ApE 3.1.10 import/map inspection.
 
 Required release:
 
@@ -166,6 +166,24 @@ Any nucleotide change creates a new construct version. Changed interpretation up
 - **Vector architecture:** historical-vector recovery, complete module sequences, selection/integration/replication evidence.
 - **Host compatibility:** coding context, RNA processing, translation, protein context, versioned redesign.
 - **Validation and governance:** controls, measurements, stop criteria, biosafety, data integrity, claim language.
+
+## Execution-resource policy
+
+- Move repeatable compute off the 16 GiB Mac when aggregate memory pressure
+      approaches its physical ceiling. `branch-origin` is the default offload lane.
+- Record host available memory and process peak RSS for each bounded compute
+      packet. The Phase 1 branch-origin rerun retained 41 GiB available RAM and
+      measured 107.7 MiB peak RSS for the clean build, 112.1 MiB for the 92-test
+      suite, and 107.2 MiB for the 51-gate validator.
+- Create a `gene-cauldron` CT on branch-prime only if measured/projected peak
+      memory exceeds 16 GiB or branch-origin cannot retain 16 GiB available.
+- Before allocating that CT against branch-prime's 128 GiB RAM, put the model
+      spooler and its restart/watchdog sentinels into verified durable maintenance
+      mode. Confirm the spooler is down and no sentinel is attempting recovery.
+- After the bounded workload, stop the CT and reverse maintenance mode
+      deliberately. Never leave the spooler disabled as an unrecorded side effect.
+- Phase 1 did not meet the CT escalation condition. Branch-prime's spooler and
+      sentinels were not changed.
 
 ## Critical path
 

@@ -52,7 +52,7 @@ Release evidence:
 	with the planned feature boundaries and no junction padding; and
 - the design specification now records source provenance, immutable formulas,
 	exact coordinates, acceptance gates, and the evidence boundary;
-- 86 automated tests and 51 executable validator gates passed after an
+- 92 automated tests and 51 executable validator gates passed after an
 	independent review/fix cycle, including adversarial mutation tests;
 - a clean rebuild was byte-identical to the prior release tree;
 - reviewed source digests are compiled as immutable trust anchors, including
@@ -60,6 +60,12 @@ Release evidence:
 - ApE 3.1.10 imported the 2,879-bp record as linear with four features and the
 	5,565-bp record as circular with six features; and
 - ApE generated a zero-circle linear canvas and a one-circle circular canvas.
+
+After aggregate local memory was reported at 26 GB and rising, ApE was stopped
+and subsequent clean build/test/validator work was moved to `branch-origin`.
+That host retained 41 GiB available RAM; measured peak RSS was 107.7 MiB for the
+build, 112.1 MiB for tests, and 107.2 MiB for validation. No gene-cauldron CT was
+needed, so branch-prime's spooler and sentinels were left unchanged.
 
 Primary release SHA-256 values:
 
