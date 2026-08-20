@@ -9,6 +9,7 @@ This section collects accession-pinned sequence records, assembly metadata, vect
 ## Reference
 
 - [Gene Sequencing and Physarum Vector Glossary](Gene-Sequencing-Glossary.md) — terms, accessions, genes, regulatory elements, plasmids, methods, and design language encountered in the Arc/Physarum companion thread.
+- [Physarum Arc Expression Vector Roadmap](Physarum-Arc-Expression-Vector-Roadmap.md) — evidence-gated progression from the digital map through native regulatory evidence, complete vector provenance, compatibility review, and conditional validation.
 
 ## Storage layout
 

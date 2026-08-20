@@ -4,6 +4,8 @@ This page indexes the sequence bundle pulled from NCBI and validated on 2026-08-
 
 Filed under [Gene Sequencing Data](Gene-Sequencing-Data.md). Terminology and construct names are defined in the [Gene Sequencing and Physarum Vector Glossary](Gene-Sequencing-Glossary.md).
 
+The follow-on work is organized in the [Physarum Arc Expression Vector Roadmap](Physarum-Arc-Expression-Vector-Roadmap.md).
+
 Files are stored in:
 
 - `docs/wiki/data/gene-sequencing-data/ncbi-arc-physarum-2026-08-20/`
