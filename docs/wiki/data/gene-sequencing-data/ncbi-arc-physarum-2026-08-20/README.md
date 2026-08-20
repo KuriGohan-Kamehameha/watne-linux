@@ -37,8 +37,8 @@ Authoritative record: https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_000413255
 
 Files:
 
-- `GCA_000413255.3_dataset.zip` — original NCBI Datasets archive
-- `GCA_000413255.3_dataset/` — extracted package, including the genomic multi-FASTA and sequence report
+- `GCA_000413255.3_dataset.zip` — original NCBI Datasets archive retained in the local source bundle; intentionally not committed because of its size
+- `GCA_000413255.3_dataset/` — extracted package, including the genomic multi-FASTA and sequence report, retained locally and intentionally not committed
 - `GCA_000413255.3.dataset_report.json` — NCBI assembly metadata
 
 All checksums embedded in the NCBI archive were verified after extraction.

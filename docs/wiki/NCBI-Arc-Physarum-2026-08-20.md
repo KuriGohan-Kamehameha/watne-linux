@@ -2,9 +2,11 @@
 
 This page indexes the sequence bundle pulled from NCBI and validated on 2026-08-20.
 
+Filed under [Gene Sequencing Data](Gene-Sequencing-Data.md). Terminology and construct names are defined in the [Gene Sequencing and Physarum Vector Glossary](Gene-Sequencing-Glossary.md).
+
 Files are stored in:
 
-- `docs/wiki/data/ncbi-arc-physarum-2026-08-20/`
+- `docs/wiki/data/gene-sequencing-data/ncbi-arc-physarum-2026-08-20/`
 
 Primary references:
 
