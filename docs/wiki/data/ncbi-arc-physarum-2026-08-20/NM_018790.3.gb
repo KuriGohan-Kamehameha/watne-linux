@@ -1,0 +1,281 @@
+LOCUS       NM_018790               3059 bp    mRNA    linear   ROD 11-AUG-2026
+DEFINITION  Mus musculus activity regulated cytoskeletal-associated protein
+            (Arc), transcript variant 1, mRNA.
+ACCESSION   NM_018790
+VERSION     NM_018790.3
+KEYWORDS    RefSeq; RefSeq Select.
+SOURCE      Mus musculus (house mouse)
+  ORGANISM  Mus musculus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia; Myomorpha;
+            Muroidea; Muridae; Murinae; Mus; Mus.
+REFERENCE   1  (bases 1 to 3059)
+  AUTHORS   Tyagi,M., de Hoog,E., Grega,M., Sullivan,K.R., Walker,A.C.,
+            Chadha,R., Northrop,A., Fabian,B., Hummer,G., Fuxreiter,M.,
+            Hyman,B.T. and Shepherd,J.D.
+  TITLE     Arc mediates intercellular tau transmission via extracellular
+            vesicles
+  JOURNAL   Cell 189 (15), 4706-4723 (2026)
+   PUBMED   42372723
+REFERENCE   2  (bases 1 to 3059)
+  AUTHORS   Xie,X., Huang,Y., Chen,R., Huang,Z., Gangal,H., Li,Z., Lu,J.,
+            Cruz,A.M., Chaiprasert,A., Yu,E., Hernandez,N., Vierkant,V.,
+            Wang,R., Wang,X., Smith,R.J. and Wang,J.
+  TITLE     Dual-engram architecture within a single striatal cell type
+            distinctly controls alcohol relapse and extinction
+  JOURNAL   Neuron 114 (12), 2148-2164 (2026)
+   PUBMED   41985453
+REFERENCE   3  (bases 1 to 3059)
+  AUTHORS   Han,J., Grau-Perales,A., Harris,R.M., Lesburgueres,E., Kao,H.Y.,
+            Pal,A., Alarcon,J.M., Sacktor,T.C., Martiniani,S., Hofmann,H.A. and
+            Fenton,A.A.
+  TITLE     Persistently Increased Expression of PKMzeta and Unbiased Gene
+            Expression Profiles Identify Hippocampal Molecular Traces of a
+            Long-Term Active Place Avoidance Memory and 'Shadow' Proteins
+  JOURNAL   Adv Sci (Weinh) 13 (28), e21254 (2026)
+   PUBMED   41824523
+REFERENCE   4  (bases 1 to 3059)
+  AUTHORS   Pola-Veliz,V., Arredondo,S.B., Arancibia,Y., Ahumada,J., Estay,S.,
+            Vidal,N., Haeger,P.A., Fuenzalida,M., Varela-Nallar,L.,
+            Bustos,F.J., Montecino,M. and van Zundert,B.
+  TITLE     Viral-mediated fluorescent labelling of activated hippocampal
+            memory engrams to study epigenetic dynamics associated with gene
+            expression
+  JOURNAL   Methods 247, 85-94 (2026)
+   PUBMED   41512978
+REFERENCE   5  (bases 1 to 3059)
+  AUTHORS   Wu,J., Petralia,R.S., Kurushima,H., Patel,H., Jung,M.Y., Volk,L.,
+            Chowdhury,S., Shepherd,J.D., Dehoff,M., Li,Y., Kuhl,D.,
+            Huganir,R.L., Price,D.L., Scannevin,R., Troncoso,J.C., Wong,P.C.
+            and Worley,P.F.
+  TITLE     Arc/Arg3.1 regulates an endosomal pathway essential for
+            activity-dependent beta-amyloid generation
+  JOURNAL   Cell 147 (3), 615-628 (2011)
+   PUBMED   22036569
+  REMARK    GeneRIF: Study reports that the immediate early gene Arc is
+            required for activity-dependent generation of Abeta. Arc is a
+            postsynaptic protein that recruits endophilin2/3 and dynamin to
+            early/recycling endosomes that traffic
+REFERENCE   6  (bases 1 to 3059)
+  AUTHORS   Maier,B., Medrano,S., Sleight,S.B., Visconti,P.E. and Scrable,H.
+  TITLE     Developmental association of the synaptic activity-regulated
+            protein arc with the mouse acrosomal organelle and the sperm tail
+  JOURNAL   Biol Reprod 68 (1), 67-76 (2003)
+   PUBMED   12493697
+  REMARK    GeneRIF: highly expressed both at the RNA and protein levels in
+            postmeiotic germ cells in the testis of adult mice
+REFERENCE   7  (bases 1 to 3059)
+  AUTHORS   Waltereit,R., Dammermann,B., Wulff,P., Scafidi,J., Staubli,U.,
+            Kauselmann,G., Bundman,M. and Kuhl,D.
+  TITLE     Arg3.1/Arc mRNA induction by Ca2+ and cAMP requires protein kinase
+            A and mitogen-activated protein kinase/extracellular regulated
+            kinase activation
+  JOURNAL   J Neurosci 21 (15), 5484-5493 (2001)
+   PUBMED   11466419
+REFERENCE   8  (bases 1 to 3059)
+  AUTHORS   Husi,H., Ward,M.A., Choudhary,J.S., Blackstock,W.P. and Grant,S.G.
+  TITLE     Proteomic analysis of NMDA receptor-adhesion protein signaling
+            complexes
+  JOURNAL   Nat Neurosci 3 (7), 661-669 (2000)
+   PUBMED   10862698
+REFERENCE   9  (bases 1 to 3059)
+  AUTHORS   Liu,D., Bei,D., Parmar,H. and Matus,A.
+  TITLE     Activity-regulated, cytoskeleton-associated protein (Arc) is
+            essential for visceral endoderm organization during early
+            embryogenesis
+  JOURNAL   Mech Dev 92 (2), 207-215 (2000)
+   PUBMED   10727859
+REFERENCE   10 (bases 1 to 3059)
+  AUTHORS   Letts,V.A., Valenzuela,A., Kirley,J.P., Sweet,H.O., Davisson,M.T.
+            and Frankel,W.N.
+  TITLE     Genetic and physical maps of the stargazer locus on mouse
+            chromosome 15
+  JOURNAL   Genomics 43 (1), 62-68 (1997)
+   PUBMED   9226373
+COMMENT     VALIDATED REFSEQ: This record has undergone validation or
+            preliminary review. The reference sequence was derived from
+            AC118022.12 and AF162777.1.
+            
+            On Feb 21, 2013 this sequence version replaced NM_018790.2.
+            
+            Transcript Variant: This variant (1) represents the longer
+            transcript. Both variants 1 and 2 encode the same protein.
+            
+            CCDS Note: This CCDS ID represents the protein described in PMIDs:
+            10727859 and 22036569. This protein is encoded by two splice
+            variants which are supported by AK157822.1 and AF162777.1. It
+            should be noted this transcript is predicted to undergo
+            nonsense-mediated mRNA decay (NMD). However, the protein is
+            represented because it was detected endogenously in PMID: 22036569.
+            It is likely that the majority of transcripts representing this
+            variant will undergo NMD, while some low level of NMD escape may
+            allow for the expression of this protein.
+            
+            Publication Note:  This RefSeq record includes a subset of the
+            publications that are available for this gene. Please see the Gene
+            record to access additional publications.
+            
+            ##Evidence-Data-START##
+            Transcript exon combination :: AF162777.1, SRR7652917.469492.1
+                                           [ECO:0000332]
+            RNAseq introns              :: single sample supports all introns
+                                           SAMN00849374, SAMN00849375
+                                           [ECO:0000348]
+            ##Evidence-Data-END##
+            
+            ##RefSeq-Attributes-START##
+            NMD candidate          :: PMID: 22036569
+            RefSeq Select criteria :: based on conservation, expression,
+                                      longest protein
+            ##RefSeq-Attributes-END##
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-18                AC118022.12        102374-102391       c
+            19-3057             AF162777.1         10-3048
+            3058-3059           AC118022.12        98902-98903         c
+FEATURES             Location/Qualifiers
+     source          1..3059
+                     /organism="Mus musculus"
+                     /mol_type="mRNA"
+                     /strain="C57BL/6"
+                     /db_xref="taxon:10090"
+                     /chromosome="15"
+                     /map="15 34.25 cM"
+     gene            1..3059
+                     /gene="Arc"
+                     /gene_synonym="Arc3.1; arg3.1; mArc"
+                     /note="activity regulated cytoskeletal-associated protein"
+                     /db_xref="GeneID:11838"
+                     /db_xref="MGI:MGI:88067"
+     exon            1..2006
+                     /gene="Arc"
+                     /gene_synonym="Arc3.1; arg3.1; mArc"
+                     /inference="alignment:Splign:2.1.0"
+     misc_feature    166..168
+                     /gene="Arc"
+                     /gene_synonym="Arc3.1; arg3.1; mArc"
+                     /note="upstream in-frame stop codon"
+     CDS             199..1389
+                     /gene="Arc"
+                     /gene_synonym="Arc3.1; arg3.1; mArc"
+                     /note="ARC/ARG3.1; activity-regulated gene 3.1 protein
+                     homolog"
+                     /codon_start=1
+                     /product="activity-regulated cytoskeleton-associated
+                     protein"
+                     /protein_id="NP_061260.1"
+                     /db_xref="CCDS:CCDS37102.1"
+                     /db_xref="GeneID:11838"
+                     /db_xref="MGI:MGI:88067"
+                     /translation="MELDHMTTGGLHAYPAPRGGPAAKPNVILQIGKCRAEMLEHVRR
+                     THRHLLTEVSKQVERELKGLHRSVGKLENNLDGYVPTGDSQRWKKSIKACLCRCQETI
+                     ANLERWVKREMHVWREVFYRLERWADRLESMGGKYPVGSEPARHTVSVGVGGPEPYCQ
+                     EADGYDYTVSPYAITPPPAAGELPEQESVEAQQYQSWGPGEDGQPSPGVDTQIFEDPR
+                     EFLSHLEEYLRQVGGSEEYWLSQIQNHMNGPAKKWWEFKQGSVKNWVEFKKEFLQYSE
+                     GTLSREAIQRELELPQKQGEPLDQFLWRKRDLYQTLYVDAEEEEIIQYVVGTLQPKLK
+                     RFLRHPLPKTLEQLIQRGMEVQDGLEQAAEPSGTPLPTEDETEALTPALTSESVASDR
+                     TQPE"
+     misc_feature    463..498
+                     /gene="Arc"
+                     /gene_synonym="Arc3.1; arg3.1; mArc"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q9WV31.1);
+                     Region: Interaction with SH3GL1 or SH3GL3.
+                     /evidence=ECO:0000250|UniProtKB:Q63053"
+     misc_feature    727..819
+                     /gene="Arc"
+                     /gene_synonym="Arc3.1; arg3.1; mArc"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q9WV31.1);
+                     Region: Disordered. /evidence=ECO:0000256|SAM:MobiDB-lite"
+     misc_feature    781..840
+                     /gene="Arc"
+                     /gene_synonym="Arc3.1; arg3.1; mArc"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q9WV31.1);
+                     Region: Interaction with DNM2.
+                     /evidence=ECO:0000250|UniProtKB:Q63053"
+     misc_feature    976..978
+                     /gene="Arc"
+                     /gene_synonym="Arc3.1; arg3.1; mArc"
+                     /note="Phosphoserine, by CaMK2.
+                     /evidence=ECO:0000269|PubMed:31151856; propagated from
+                     UniProtKB/Swiss-Prot (Q9WV31.1); phosphorylation site"
+     misc_feature    1030..1032
+                     /gene="Arc"
+                     /gene_synonym="Arc3.1; arg3.1; mArc"
+                     /note="Phosphothreonine.
+                     /evidence=ECO:0000269|PubMed:31151856; propagated from
+                     UniProtKB/Swiss-Prot (Q9WV31.1); phosphorylation site"
+     misc_feature    1264..1386
+                     /gene="Arc"
+                     /gene_synonym="Arc3.1; arg3.1; mArc"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q9WV31.1);
+                     Region: Disordered. /evidence=ECO:0000256|SAM:MobiDB-lite"
+     exon            2007..2146
+                     /gene="Arc"
+                     /gene_synonym="Arc3.1; arg3.1; mArc"
+                     /inference="alignment:Splign:2.1.0"
+     exon            2147..3059
+                     /gene="Arc"
+                     /gene_synonym="Arc3.1; arg3.1; mArc"
+                     /inference="alignment:Splign:2.1.0"
+     regulatory      3039..3044
+                     /regulatory_class="polyA_signal_sequence"
+                     /gene="Arc"
+                     /gene_synonym="Arc3.1; arg3.1; mArc"
+                     /note="hexamer: AATAAA"
+     polyA_site      3057
+                     /gene="Arc"
+                     /gene_synonym="Arc3.1; arg3.1; mArc"
+                     /note="major polyA site"
+ORIGIN      
+        1 gcagagctca agcgagttct cccgcagccg cagtctctgg gcctctctag cttcagcggc
+       61 gacgagcctg ccacactcgc taagctcctc cggcaccgca cacctgccac tgccgctgca
+      121 gccgccggct ctgctccctt ccggcttctg cctcagagga gttcttagcc tgttcggagc
+      181 cgcagcaccg acgaccagat ggagctggac catatgacca ccggcggcct ccacgcctac
+      241 cctgccccgc ggggtgggcc ggccgccaaa cccaatgtga tcctgcagat tggtaagtgc
+      301 cgagctgaga tgctggaaca cgtacggagg acccaccggc atctgttgac cgaagtgtcc
+      361 aagcaggtgg agcgagagct gaaagggttg cacaggtcgg tgggcaagct ggagaacaac
+      421 ttggacggct acgtgcccac cggcgactca cagcgctgga agaagtccat caaggcctgt
+      481 ctttgccgct gccaggagac catcgccaac ctggagcgct gggtcaagcg tgagatgcac
+      541 gtgtggaggg aggtcttcta ccgtctggag aggtgggctg accgcctgga gtccatgggc
+      601 ggcaaatacc cagtgggcag cgagccggcc cgccacactg tctctgtagg tgtggggggt
+      661 ccagagccct actgccagga agctgatggc tatgactata ccgttagccc ctatgccatc
+      721 accccgccac ctgccgcagg agaactgcct gaacaggagt cagttgaggc tcagcaatat
+      781 cagtcttggg ggccaggtga ggatgggcaa ccgagccctg gtgtggatac acagatcttc
+      841 gaggacccac gggagttcct gagccacctg gaagagtacc tgcggcaggt gggtggctct
+      901 gaagaatatt ggctgtccca gatccagaac cacatgaatg ggccagccaa gaagtggtgg
+      961 gagttcaagc agggctcggt gaagaactgg gtggagttca agaaggagtt tctgcaatac
+     1021 agtgagggta cactctcccg tgaagccatt cagcgggagc tggagctgcc gcagaagcag
+     1081 ggtgaaccac tcgaccagtt cctctggcgc aagcgggacc tgtaccagac actgtatgtg
+     1141 gacgctgagg aggaggagat cattcagtat gtggtgggca ccctgcagcc caaactcaag
+     1201 cgctttctgc gccacccact ccccaagacc ctggagcagc ttatccagag gggtatggaa
+     1261 gtgcaggacg gcctggagca ggcagctgag ccttctggca ccccactgcc cacagaggat
+     1321 gagacggagg cactcacacc tgctcttacc agcgagtcag tagccagtga caggacccag
+     1381 cctgaataga ggggccagcc cagggtcccc agcccgcctg ccacacccag cctgtggctt
+     1441 ttgccaacta ggacttgagc tggggctgac tcccaaaggg atgccctgtc cagccagaca
+     1501 tctactcacc cactgacctg gcctgactca caactgccac acaaccatgc tacatggact
+     1561 gaacatcaag aagccccttt cccatagggc tcccacctgc cgcctacccc tcatctgtct
+     1621 gccctggtcc tggcccccag ccccattggc ctcaccctct acactctcag accatcacag
+     1681 aacacgatct ggcttcctca ttctgctcca gtgtccaggg ctctttgggt aatcaagaaa
+     1741 ccaagtgtct gaaaggcaac aaaaagtagg caccaaaacc caggggacat cctagggcag
+     1801 atgctaaagc agagatgctg agggaacctc aacttccggg gatgcagccc actcctgcag
+     1861 acacagcaga tccagctggt accctagctg ccgcccaggg caaccggcca gtcttgggca
+     1921 gcatagctcc cctcccaggg gtgagctgaa gccacaaatg cagctgaagc agcagacctg
+     1981 acatcctggc acctcctggc ccccagcagt gattcatacc agtgaagaag agcagagctc
+     2041 agctccgtga ctcagccatg gcaggcggag ggtccccgag gggctgagtc ctcacaccca
+     2101 gccgaggcag cggctggagc ctacagagcc aggagaatga caccaggtct caaggctgct
+     2161 gagaagtctt tgctgccatg tctggaaagg gcatcaccac accaccagca ccagcaccat
+     2221 cctctcttct cctgaagctg cctacatggg ttccaagaca ctttcaaggc agagaaaaca
+     2281 agattacaga gaggaggtgc ctggcagggg gcagcacccc agctcagccc aagagctgaa
+     2341 ggtgaagaca agccagcatg aaaccacggg tctgccatga tgcccgcccc gctggccgct
+     2401 cactagctgc ctgccattag cctctgcagc ttgagcaggg tctgtaccct tggtcctctt
+     2461 ggcacagagc ccagctcgct gcatggcctt tggctccccg accagaccct tgcaggagcc
+     2521 ttaaggcttg ggcccctgcc cagcctgatc tttcctgctg tgccctgcct gccaggtcaa
+     2581 gcccagtccc aggagacccc aggccttggc tcctaggctg ttccatgaac ctccctgacc
+     2641 tgcctggtga ttgcccagct gaaacctcag ccaagcccca gctccaatta ccttgtgctg
+     2701 gtagctgctt gtgtctgcag tctgagtagg ccttgttgcg gttcctccat ctgcctggtc
+     2761 tattggtgtt ctgagaccaa ttccactgat gttctgacag atcctccacc ctgtgcccct
+     2821 gccagccccc acaagtttat ttttgcacaa aagccatgac ccatactcat ttggctggca
+     2881 tagggtgtgt aggtaggccc tggggactag ggagaccctg gagatctcaa gagagtgtgg
+     2941 ctatccccta ttttcaccaa gccttgaata tccagccagg ctgtctgccc ataccatctt
+     3001 acctcaaaga cagatatata tctatatatg attttgttaa taaaactatg aaacttatt
+//
+

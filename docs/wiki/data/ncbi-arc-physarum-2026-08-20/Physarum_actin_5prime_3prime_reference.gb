@@ -1,0 +1,94 @@
+LOCUS       SLMARDC5                1107 bp    DNA     linear   INV 12-JUL-1996
+DEFINITION  Physarum polycephalum actin gene, 5' region.
+ACCESSION   M73459
+VERSION     M73459.1
+KEYWORDS    actin.
+SOURCE      Badhamia polycephala
+  ORGANISM  Badhamia polycephala
+            Eukaryota; Amoebozoa; Evosea; Eumycetozoa; Myxogastria;
+            Myxogastromycetidae; Physariida; Physaraceae; Badhamia.
+REFERENCE   1  (bases 1 to 1107)
+  AUTHORS   Benard,M., Lagnel,C., Pallotta,D. and Pierron,G.
+  TITLE     Mapping of a replication origin within the promoter region of two
+            unlinked, abundantly transcribed actin genes of Physarum
+            polycephalum
+  JOURNAL   Mol. Cell. Biol. 16 (3), 968-976 (1996)
+   PUBMED   8622700
+FEATURES             Location/Qualifiers
+     source          1..1107
+                     /organism="Badhamia polycephala"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:5791"
+     regulatory      1..1049
+                     /regulatory_class="promoter"
+                     /note="promoter region"
+     gene            1050..1107
+                     /gene="ardC"
+     mRNA            1050..>1107
+                     /gene="ardC"
+     CDS             1083..>1107
+                     /gene="ardC"
+                     /codon_start=1
+                     /product="actin"
+                     /protein_id="AAB03706.1"
+                     /translation="MEGEDVQA"
+ORIGIN      
+        1 ggatctccac actattgcac atgctaccgt aatcaattat aggccgaaat cactctatca
+       61 actcaccccg agcggtgtac actcactcca ctcacaatca cacttaatca catcttcacc
+      121 ttgttcattt gtgcatgttt actagcgcat gttcgcccca catgctcaca atcatcactc
+      181 cactcactct tggcgctagc cattacatac cttgaattag caaaacttta cgcaaatgta
+      241 gctagagaat gagtacaaag gggaaaggaa gtaataagtg aaagtggaat ggaaaatggg
+      301 caatgggaaa cgtggttagg gatgtatgtg gctaggatat ggataggacg tattggggag
+      361 ggagtgatag gatagaggat atggtatgac agtgcgagcg tgatatatga gacatgtagc
+      421 tagtaagccg gagggaagga taaaatcaca aggggagtat aaagggagga agtacaacaa
+      481 caatacaaca agaaaacatg gactatgaga tgaaaaacat tgtgtgctta tgtagaacta
+      541 gttaaaaaca cggacaaaaa ggtgaacaaa tacgattaga acacatacag aggcggtaca
+      601 acaacaaagc aacaagagaa aatgtgagat tctgaaatga gaacgaggag aaggacgatc
+      661 agctaagtga tggagtggaa aagttatgat atggggaaaa aacacggata gaaaggtgaa
+      721 gctatagaga catgaaggga aagcaaaaac aaagaaaaaa catgcggttc tgaaatgaga
+      781 atgggggaga agggcaatca gctaagtgat ggaggagaag ttagtgctgg cacgttggtg
+      841 aagagcgccc ccagacctgt ggaccggcat ttacgcacgt tttacgcacg atttacgcca
+      901 aattttcgga gcggttgcga aatttgcctt ttcggggtaa aatttacaca acttttacgc
+      961 actttttcgg ttctgatttt tgcattggca ggtgcgaaat gattggggag tggaacagat
+     1021 aaaagggtga aacgcgtcgc tcttctttgt gtttagcaaa acaacaaaac aaacaaaccg
+     1081 caatggaagg agaagacgtt caagctt
+//
+
+LOCUS       SLMARDC3                 639 bp    DNA     linear   INV 12-JUL-1996
+DEFINITION  Physarum polycephalum actin gene, 3' region.
+ACCESSION   M73460
+VERSION     M73460.1
+KEYWORDS    actin.
+SOURCE      Badhamia polycephala
+  ORGANISM  Badhamia polycephala
+            Eukaryota; Amoebozoa; Evosea; Eumycetozoa; Myxogastria;
+            Myxogastromycetidae; Physariida; Physaraceae; Badhamia.
+REFERENCE   1  (bases 1 to 639)
+  AUTHORS   Benard,M., Lagnel,C., Pallotta,D. and Pierron,G.
+  TITLE     Mapping of a replication origin within the promoter region of two
+            unlinked, abundantly transcribed actin genes of Physarum
+            polycephalum
+  JOURNAL   Mol. Cell. Biol. 16 (3), 968-976 (1996)
+   PUBMED   8622700
+COMMENT     Original source text: Physarum polycephalum DNA; and Physarum
+            polycephalum DNA.
+FEATURES             Location/Qualifiers
+     source          1..639
+                     /organism="Badhamia polycephala"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:5791"
+     3'UTR           1..639
+ORIGIN      
+        1 acgcacccgt agtcgctccc attgcttaag ttgtttgcta ctcgcccgtc aatgaagtgt
+       61 ccctttactt ccttgttgta attgcatcct tcaaccactc tcggctagat agtgtttctt
+      121 gccgtttgtg tttgttgggg ctgtaaatat atacaagtta aacaaaattt ttgttctacc
+      181 ctcccacaag ccaagtcttg attttctcgc ctttcgtgaa ctaaaaagcc aagtctcaat
+      241 tttctcgcct ttaaagtaat ctaaaatgct atgttgatgt tctcactttt cgtacacgac
+      301 ggggctacac tttgttttta taaaaaaaac tagtttttac gcttaccgta gctgatagtg
+      361 aatgccccct ccccctcgga ttagatcctc gctccccaac ctccttgagt tggtgatgcg
+      421 cgtgtctttt gattttttga ttcatttatt tattggcttt tttaattttt tatatattta
+      481 tttatttatt tttttttata caagtttgcg aggacgcgaa aataggagca gggggggggg
+      541 gtaaataatt gcattgtatg gagcatgcat tgtgcattgt attattgaaa tgtctaaagc
+      601 cgatgtcgcg gctatattgt gtggggagaa tgtgaattc
+//
+
