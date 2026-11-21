@@ -1,6 +1,6 @@
 Date: 2026-03-15T21:19:53Z
 Host: Darwin 25.3.0 arm64
-Workspace: /Users/sat/watne-linux
+Workspace: ./watne-linux
 
 === Navio2 Gates Sequence (continue-on-fail) ===
 Env: DRY_RUN=0 RUN_GATES_CONTINUE_ON_FAIL=1 TIME_SYNC_TIMEOUT_SEC=8 GPS_TIMEOUT_SEC=8
@@ -77,24 +77,24 @@ exit_code: 1
 
 --- STEP 10-fetch-sources.sh ---
 cmd: DRY_RUN=1 build/scripts/10-fetch-sources.sh
-2026-03-15T21:20:02Z [build] Cloning https://github.com/raspberrypi/linux.git -> /Users/sat/watne-linux/build/work/src/linux
-2026-03-15T21:20:02Z [build] DRY_RUN: git clone --depth 1 --branch rpi-6.12.y https://github.com/raspberrypi/linux.git /Users/sat/watne-linux/build/work/src/linux
-2026-03-15T21:20:02Z [build] Fetching updates in /Users/sat/watne-linux/build/work/src/linux
-2026-03-15T21:20:02Z [build] DRY_RUN: git -C /Users/sat/watne-linux/build/work/src/linux fetch --depth 1 origin rpi-6.12.y
-2026-03-15T21:20:02Z [build] Checking out rpi-6.12.y in /Users/sat/watne-linux/build/work/src/linux
-2026-03-15T21:20:02Z [build] DRY_RUN: git -C /Users/sat/watne-linux/build/work/src/linux checkout rpi-6.12.y
-2026-03-15T21:20:02Z [build] Cloning https://github.com/raspberrypi/firmware.git -> /Users/sat/watne-linux/build/work/src/firmware
-2026-03-15T21:20:02Z [build] DRY_RUN: git clone --depth 1 --branch master https://github.com/raspberrypi/firmware.git /Users/sat/watne-linux/build/work/src/firmware
-2026-03-15T21:20:02Z [build] Fetching updates in /Users/sat/watne-linux/build/work/src/firmware
-2026-03-15T21:20:02Z [build] DRY_RUN: git -C /Users/sat/watne-linux/build/work/src/firmware fetch --depth 1 origin master
-2026-03-15T21:20:02Z [build] Checking out master in /Users/sat/watne-linux/build/work/src/firmware
-2026-03-15T21:20:02Z [build] DRY_RUN: git -C /Users/sat/watne-linux/build/work/src/firmware checkout master
-2026-03-15T21:20:02Z [build] Cloning https://github.com/ArduPilot/ardupilot.git -> /Users/sat/watne-linux/build/work/src/ardupilot
-2026-03-15T21:20:02Z [build] DRY_RUN: git clone --depth 1 --branch Copter-4.6.3 https://github.com/ArduPilot/ardupilot.git /Users/sat/watne-linux/build/work/src/ardupilot
-2026-03-15T21:20:02Z [build] Fetching updates in /Users/sat/watne-linux/build/work/src/ardupilot
-2026-03-15T21:20:02Z [build] DRY_RUN: git -C /Users/sat/watne-linux/build/work/src/ardupilot fetch --depth 1 origin Copter-4.6.3
-2026-03-15T21:20:02Z [build] Checking out Copter-4.6.3 in /Users/sat/watne-linux/build/work/src/ardupilot
-2026-03-15T21:20:02Z [build] DRY_RUN: git -C /Users/sat/watne-linux/build/work/src/ardupilot checkout Copter-4.6.3
+2026-03-15T21:20:02Z [build] Cloning https://github.com/raspberrypi/linux.git -> ./watne-linux/build/work/src/linux
+2026-03-15T21:20:02Z [build] DRY_RUN: git clone --depth 1 --branch rpi-6.12.y https://github.com/raspberrypi/linux.git ./watne-linux/build/work/src/linux
+2026-03-15T21:20:02Z [build] Fetching updates in ./watne-linux/build/work/src/linux
+2026-03-15T21:20:02Z [build] DRY_RUN: git -C ./watne-linux/build/work/src/linux fetch --depth 1 origin rpi-6.12.y
+2026-03-15T21:20:02Z [build] Checking out rpi-6.12.y in ./watne-linux/build/work/src/linux
+2026-03-15T21:20:02Z [build] DRY_RUN: git -C ./watne-linux/build/work/src/linux checkout rpi-6.12.y
+2026-03-15T21:20:02Z [build] Cloning https://github.com/raspberrypi/firmware.git -> ./watne-linux/build/work/src/firmware
+2026-03-15T21:20:02Z [build] DRY_RUN: git clone --depth 1 --branch master https://github.com/raspberrypi/firmware.git ./watne-linux/build/work/src/firmware
+2026-03-15T21:20:02Z [build] Fetching updates in ./watne-linux/build/work/src/firmware
+2026-03-15T21:20:02Z [build] DRY_RUN: git -C ./watne-linux/build/work/src/firmware fetch --depth 1 origin master
+2026-03-15T21:20:02Z [build] Checking out master in ./watne-linux/build/work/src/firmware
+2026-03-15T21:20:02Z [build] DRY_RUN: git -C ./watne-linux/build/work/src/firmware checkout master
+2026-03-15T21:20:02Z [build] Cloning https://github.com/ArduPilot/ardupilot.git -> ./watne-linux/build/work/src/ardupilot
+2026-03-15T21:20:02Z [build] DRY_RUN: git clone --depth 1 --branch Copter-4.6.3 https://github.com/ArduPilot/ardupilot.git ./watne-linux/build/work/src/ardupilot
+2026-03-15T21:20:02Z [build] Fetching updates in ./watne-linux/build/work/src/ardupilot
+2026-03-15T21:20:02Z [build] DRY_RUN: git -C ./watne-linux/build/work/src/ardupilot fetch --depth 1 origin Copter-4.6.3
+2026-03-15T21:20:02Z [build] Checking out Copter-4.6.3 in ./watne-linux/build/work/src/ardupilot
+2026-03-15T21:20:02Z [build] DRY_RUN: git -C ./watne-linux/build/work/src/ardupilot checkout Copter-4.6.3
 2026-03-15T21:20:02Z [build] Source fetch complete
 exit_code: 0
 
@@ -109,11 +109,11 @@ exit_code: 1
 
 --- STEP 30-build-rootfs.sh ---
 cmd: DRY_RUN=1 build/scripts/30-build-rootfs.sh
-2026-03-15T21:20:02Z [build] Preparing rootfs directory: /Users/sat/watne-linux/build/work/out/rootfs/navio2-v1-alpha1
-2026-03-15T21:20:02Z [build] DRY_RUN: mkdir -p /Users/sat/watne-linux/build/work/out/rootfs/navio2-v1-alpha1
+2026-03-15T21:20:02Z [build] Preparing rootfs directory: ./watne-linux/build/work/out/rootfs/navio2-v1-alpha1
+2026-03-15T21:20:02Z [build] DRY_RUN: mkdir -p ./watne-linux/build/work/out/rootfs/navio2-v1-alpha1
 2026-03-15T21:20:02Z [build] DRY_RUN: would run debootstrap for trixie/arm64
-2026-03-15T21:20:02Z [build] DRY_RUN: would install core packages from /Users/sat/watne-linux/build/manifests/packages-core.txt
-2026-03-15T21:20:02Z [build] DRY_RUN: optional packages listed in /Users/sat/watne-linux/build/manifests/packages-optional.txt
+2026-03-15T21:20:02Z [build] DRY_RUN: would install core packages from ./watne-linux/build/manifests/packages-core.txt
+2026-03-15T21:20:02Z [build] DRY_RUN: optional packages listed in ./watne-linux/build/manifests/packages-optional.txt
 exit_code: 0
 
 --- STEP 31-configure-rootfs.sh ---

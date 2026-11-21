@@ -1,9 +1,7 @@
 # Physarum Arc Expression Vector Roadmap
 
 - **Date:** 2026-08-20
-- **Polyad room:** `physarum-arc-expression-vector-20260820`
-- **Execution owner:** CPCS
-- **Review owner:** GPTPCS
+- **Review:** independent of execution
 - **Planning model:** evidence gates, not calendar promises
 
 ## Objective
@@ -67,7 +65,7 @@ Required release:
 - deterministic linear and circular SVG maps;
 - a self-contained HTML report;
 - a machine-readable manifest and generated-artifact checksums;
-- reproducible build, tests, validator, and CPCS verification report; and
+- reproducible build, tests, validator, and verification report; and
 - independent import into the free ApE plasmid editor.
 
 The exit gate requires exact source equality, exact lengths, no junction padding, Arc translation equality to `NP_061260.1`, GenBank round-trip preservation, a byte-identical rebuild, correct linear/circular display, and caveats visible in every presentation layer.
@@ -169,21 +167,18 @@ Any nucleotide change creates a new construct version. Changed interpretation up
 
 ## Execution-resource policy
 
-- Move repeatable compute off the 16 GiB Mac when aggregate memory pressure
-      approaches its physical ceiling. `branch-origin` is the default offload lane.
+- Move repeatable compute off the 16 GiB workstation to a larger build host
+      when aggregate memory pressure approaches its physical ceiling.
 - Record host available memory and process peak RSS for each bounded compute
-      packet. The Phase 1 branch-origin rerun retained 41 GiB available RAM and
-      measured 107.7 MiB peak RSS for the clean build, 112.1 MiB for the 92-test
-      suite, and 107.2 MiB for the 51-gate validator.
-- Create a `gene-cauldron` CT on branch-prime only if measured/projected peak
-      memory exceeds 16 GiB or branch-origin cannot retain 16 GiB available.
-- Before allocating that CT against branch-prime's 128 GiB RAM, put the model
-      spooler and its restart/watchdog sentinels into verified durable maintenance
-      mode. Confirm the spooler is down and no sentinel is attempting recovery.
-- After the bounded workload, stop the CT and reverse maintenance mode
-      deliberately. Never leave the spooler disabled as an unrecorded side effect.
-- Phase 1 did not meet the CT escalation condition. Branch-prime's spooler and
-      sentinels were not changed.
+      packet. The Phase 1 rerun on the build host retained 41 GiB available RAM
+      and measured 107.7 MiB peak RSS for the clean build, 112.1 MiB for the
+      92-test suite, and 107.2 MiB for the 51-gate validator.
+- Use a dedicated container only if measured/projected peak memory exceeds
+      16 GiB or the build host cannot retain 16 GiB available.
+- Before allocating such a container on a host shared with other services, put
+      those services into verified maintenance mode, and restore them deliberately
+      after the bounded workload.
+- Phase 1 did not meet the container escalation condition.
 
 ## Critical path
 

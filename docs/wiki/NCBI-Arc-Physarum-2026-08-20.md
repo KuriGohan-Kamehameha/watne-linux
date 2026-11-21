@@ -26,10 +26,8 @@ Included in this commit:
 
 Last updated: **2026-08-20 21:30:47 UTC**
 
-The Phase 1 digital map release was completed in durable polyad room
-`physarum-arc-expression-vector-20260820`, labelled **Physarum Arc Expression
-Vector**, with profile `triad_core_v1`. CPCS owns bounded execution and
-verification; GPTPCS owns review.
+The Phase 1 digital map release, **Physarum Arc Expression Vector**, is
+complete. Execution and verification were reviewed independently.
 
 The selected audit-first design produces both:
 
@@ -62,10 +60,10 @@ Release evidence:
 - ApE generated a zero-circle linear canvas and a one-circle circular canvas.
 
 After aggregate local memory was reported at 26 GB and rising, ApE was stopped
-and subsequent clean build/test/validator work was moved to `branch-origin`.
+and subsequent clean build/test/validator work was moved to a larger build host.
 That host retained 41 GiB available RAM; measured peak RSS was 107.7 MiB for the
-build, 112.1 MiB for tests, and 107.2 MiB for validation. No gene-cauldron CT was
-needed, so branch-prime's spooler and sentinels were left unchanged.
+build, 112.1 MiB for tests, and 107.2 MiB for validation. No dedicated container
+was needed.
 
 Primary release SHA-256 values:
 
